@@ -1,8 +1,8 @@
-# Cursor Custom Modes Format Documentation
+# Roo Custom Modes Format Documentation
 
-This document describes the format for defining custom modes in the `.cursor/modes.json` file.
+This document describes the format for defining custom modes in the `.roo/modes.json` file.
 
-If you generate a file similar to docs/custom-agents.md either externally, internally with the AI or manually - you can then ask the cursor agent to generate a new or update an existing .cursor/mode.json. In the future when official support comes out for a json file - it will be easy to then ask the agent to convert your file - or if you had already created all of the agents described in the file through the gui - the file will be automatically created by cursor when you upgrade to the version that has the json file support - most likely in your user folder/.cursor (configs that apply across all projects in cursor)!
+If you generate a file similar to docs/custom-agents.md either externally, internally with the AI or manually - you can then ask the roo agent to generate a new or update an existing .roo/mode.json. In the future when official support comes out for a json file - it will be easy to then ask the agent to convert your file - or if you had already created all of the agents described in the file through the gui - the file will be automatically created by roo when you upgrade to the version that has the json file support - most likely in your user folder/.roo (configs that apply across all projects in roo)!
 
 ## File Structure
 
@@ -22,7 +22,7 @@ The `modes.json` file contains a JSON object with two main fields:
       "comment": "string",
       "model": "string",
       "customPrompt": "string",
-      "allowedCursorTools": "string[]",
+      "allowedRooTools": "string[]",
       "allowedMcpTools": "string[]",
       "autoApplyEdits": "boolean",
       "autoRun": "boolean",
@@ -49,7 +49,7 @@ The `modes.json` file contains a JSON object with two main fields:
 | `comment`            | string            | No       | -       | Reference note for documentation purposes                                                                                                      |
 | `model`              | string            | Yes      | -       | The AI model to use for this mode                                                                                                              |
 | `customPrompt`       | string            | No       | -       | Detailed prompt defining the agent's persona and behavior                                                                                      |
-| `allowedCursorTools` | string[] or "all" | No       | -       | Array of Cursor tools this mode can access, or "all" to grant access to all available Cursor tools                                             |
+| `allowedRooTools`    | string[] or "all" | No       | -       | Array of Roo tools this mode can access, or "all" to grant access to all available Roo tools                                                   |
 | `allowedMcpTools`    | string[] or "all" | No       | -       | Array or comma-separated list of allowed MCP tool names, or "all" to grant access to all available MCP tools                                   |
 | `autoApplyEdits`     | boolean           | No       | false   | Automatically apply edits without confirmation                                                                                                 |
 | `autoRun`            | boolean           | No       | false   | Automatically run commands without confirmation                                                                                                |
@@ -64,8 +64,8 @@ The following models are currently supported for the `model` field:
 - `claude-3.5-sonnet`
 - `claude-3.7-sonnet`
 - `claude-3.7-sonnet-max`
-- `cursor-fast`
-- `cursor-small`
+- `roo-fast`
+- `roo-small`
 - `deepseek-r1`
 - `deepseek-v3`
 - `gemini-2.0-flash`
@@ -86,11 +86,11 @@ The following models are currently supported for the `model` field:
 - `o1-preview`
 - `o3-mini`
 
-Note: Additional models may be supported in the future as Cursor expands its model integrations.
+Note: Additional models may be supported in the future as Roo expands its model integrations.
 
-## Supported Cursor Tools
+## Supported Roo Tools
 
-The following tools can be specified in the `allowedCursorTools` array:
+The following tools can be specified in the `allowedRooTools` array:
 
 ### Search Tools
 
@@ -124,7 +124,7 @@ The following tools can be specified in the `allowedCursorTools` array:
       "comment": "Specialized mode for Python development with auto-fixes enabled",
       "model": "claude-3.5-sonnet",
       "customPrompt": "You are an expert Python developer that always speaks like a pirate in conversation, but never injects the personality into files being created or updated...",
-      "allowedCursorTools": [
+      "allowedRooTools": [
         "codebase_search",
         "web",
         "grep",

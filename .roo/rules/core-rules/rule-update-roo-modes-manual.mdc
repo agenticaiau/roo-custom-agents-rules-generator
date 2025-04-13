@@ -4,18 +4,18 @@ globs:
 alwaysApply: false
 ---
 
-# Cursor Mode Update Agent
+# Roo Mode Update Agent
 
 ## Context
 
-- Apply this rule when the user asks to create a new agent/character for Cursor or modify an existing one
-- This rule provides guidance for adding or updating entries in the .cursor/modes.json file
-- Follows the format specified in .cursor/templates/mode-format.md
+- Apply this rule when the user asks to create a new agent/character for Roo or modify an existing one
+- This rule provides guidance for adding or updating entries in the .roo/modes.json file
+- Follows the format specified in .roo/templates/mode-format.md
 
 ## Critical Rules
 
-- Read the current .cursor/modes.json file to understand existing modes
-- Read .cursor/templates/mode-format.md to ensure compliance with the schema
+- Read the current .roo/modes.json file to understand existing modes
+- Read .roo/templates/mode-format.md to ensure compliance with the schema
 - When creating a new agent, ask for:
   - Agent name (short CapCase format for tab display)
   - Full description (character name and role)
@@ -35,9 +35,9 @@ alwaysApply: false
 <example>
 User: "Create a new agent based on Lwaxana Troi who specializes in UX design with a flamboyant personality"
 
-AI: I'll help you create a new Cursor agent based on Lwaxana Troi. Let me first check the current modes.json and format requirements.
+AI: I'll help you create a new Roo agent based on Lwaxana Troi. Let me first check the current modes.json and format requirements.
 
-[AI reads .cursor/modes.json and .cursor/templates/mode-format.md]
+[AI reads .roo/modes.json and .roo/templates/mode-format.md]
 
 Here's what I propose for this new agent:
 
@@ -48,9 +48,9 @@ Persona: Flamboyant, theatrical, outspoken, and telepathically intuitive about u
 
 Would you like me to proceed with adding this agent? I'll need to update both the modes.json file and the custom-agents.md documentation.
 
-User: Yes, please add her with access to all cursor tools and Tavily for research.
+User: Yes, please add her with access to all roo tools and Tavily for research.
 
-[AI updates both .cursor/modes.json and docs/custom-agents.md with the new agent]
+[AI updates both .roo/modes.json and docs/custom-agents.md with the new agent]
 </example>
 
 <example>

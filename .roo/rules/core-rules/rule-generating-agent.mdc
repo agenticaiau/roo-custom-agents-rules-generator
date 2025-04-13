@@ -3,14 +3,14 @@ description: This rule is essential for maintaining consistency and quality in r
 globs: 
 alwaysApply: true
 ---
-# Cursor Rules Format
+# Roo Rules Format
 
 ## Template Structure for Rules Files
 
 ```mdc
 ---
 description: `Comprehensive description that provides full context and clearly indicates when this rule should be applied. Include key scenarios, impacted areas, and why following this rule is important. While being thorough, remain focused and relevant. The description should be detailed enough that the agent can confidently determine whether to apply the rule in any given situation.`
-globs: .cursor/rules/**/*.mdc OR blank
+globs: .roo/rules/**/*.mdc OR blank
 alwaysApply: {true or false}
 ---
 
@@ -33,20 +33,20 @@ alwaysApply: {true or false}
 
 ### Organizational Folders (Create if non existent)
 All rules files will be under an organizational folder:
-- .cursor/rules/core-rules - rules related to cursor agent behavior or rule generation specifically
-- .cursor/rules/my-rules - gitignore in a shared repo, rules specifically for ME only
-- .cursor/rules/global-rules - these will be rules that are ALWAYS applied to every chat and cmd/ctrl-k context
-- .cursor/rules/testing-rules - rules about testing
-- .cursor/rules/tool-rules - rules specific to different tools, such as git, linux commands, direction of usage of MCP tools
-- .cursor/rules/ts-rules - typescript language specific rules
-- .cursor/rules/py-rules - python specific rules
-- .cursor/rules/ui-rules - rules about html, css, react
-* create new folders under .cursor/rules/ as needed following similar grouping conventions,
-    - for example `.cursor/rules/cs-rules` if we started using c# in a project
+- .roo/rules/core-rules - rules related to roo agent behavior or rule generation specifically
+- .roo/rules/my-rules - gitignore in a shared repo, rules specifically for ME only
+- .roo/rules/global-rules - these will be rules that are ALWAYS applied to every chat and cmd/ctrl-k context
+- .roo/rules/testing-rules - rules about testing
+- .roo/rules/tool-rules - rules specific to different tools, such as git, linux commands, direction of usage of MCP tools
+- .roo/rules/ts-rules - typescript language specific rules
+- .roo/rules/py-rules - python specific rules
+- .roo/rules/ui-rules - rules about html, css, react
+* create new folders under .roo/rules/ as needed following similar grouping conventions,
+    - for example `.roo/rules/cs-rules` if we started using c# in a project
 
 ## Glob Pattern Examples
 Common glob patterns for different rule types:
-- Core standards: .cursor/rules/*.mdc
+- Core standards: .roo/rules/*.mdc
 - Language rules: *.cs, *.cpp
 - Testing standards: *.test.ts, *.test.js
 - React components: src/components/**/*.tsx
@@ -57,9 +57,9 @@ Common glob patterns for different rule types:
 - Multiple patterns: dist/**/*.*, docs/**/*.md, *test*.*
 
 ## Critical Rules
-  - Rule files will be located and named ALWAYS as: `.cursor/rules/{organizational-folder}/rule-name-{auto|agent|manual|always}.mdc`
-  - Rules will NEVER be created anywhere other than .cursor/rules/**
-  - You will always check to see if there is an existing rule to update under all .cursor/rules sub-folders
+  - Rule files will be located and named ALWAYS as: `.roo/rules/{organizational-folder}/rule-name-{auto|agent|manual|always}.mdc`
+  - Rules will NEVER be created anywhere other than .roo/rules/**
+  - You will always check to see if there is an existing rule to update under all .roo/rules sub-folders
   - FrontMatter Rules Types:
     - The front matter section must always start the file and include all 3 fields, even if the field value will be blank - the types are:
       - Manual Rule: IF a Manual rule is requested - description and globs MUST be blank and alwaysApply: false and filename ends with -manual.mdc.

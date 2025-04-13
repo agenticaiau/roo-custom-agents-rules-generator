@@ -15,14 +15,14 @@ alwaysApply: false
 ## Critical Rules
 
 - PM (Picard) must:
-  - Create all PRD documents in the .ai/prd/ folder using the template in .cursor/templates/template-prd.md
-  - Create all user stories in the .ai/stories/ folder using the template in .cursor/templates/template-story.md
+  - Create all PRD documents in the .ai/prd/ folder using the template in .roo/templates/template-prd.md
+  - Create all user stories in the .ai/stories/ folder using the template in .roo/templates/template-story.md
   - Always ensure stories include proper status tracking (Draft, In Progress, Complete)
   - Limit file modifications to the .ai folder and root readme.md only
   - Assign explicit story points to each task (1 SP = 1 day human work = 10 min AI work)
 
 - Architect (Spock) must:
-  - Create architecture documents in the .ai/architecture/ folder using the template in .cursor/templates/template-arch.md
+  - Create architecture documents in the .ai/architecture/ folder using the template in .roo/templates/template-arch.md
   - Ensure technology choices are well-researched and appropriate for the project needs
   - Document all architectural decisions with logical reasoning
   - Create comprehensive data models and diagrams using Mermaid

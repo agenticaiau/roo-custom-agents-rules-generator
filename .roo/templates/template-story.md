@@ -141,6 +141,6 @@ This new feature is implemented under /src/new-foo-api for the handler, with all
 - ....
 - AiAgent: Grid implementation complete, proceeding with piece placement
 - BMad: Why did you delete all of the files I asked you to move and move all the files I asked you to delete!!! Bad Agent
-- AiAgent: 1000 pardons master BMad I will correct that now <deletes entire project and uninstalls cursor from machine>
+- AiAgent: 1000 pardons master BMad I will correct that now <deletes entire project and uninstalls roo from machine>
 - BMad: Noooooooo!!!!!!!!!!!!!
   </example>

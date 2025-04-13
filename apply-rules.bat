@@ -17,15 +17,15 @@ if not exist "%TARGET_DIR%\" (
     (
         echo # New Project
         echo.
-        echo This project has been initialized with agile workflow support and auto rule generation configured from [cursor-auto-rules-agile-workflow](https://github.com/bmadcode/cursor-auto-rules-agile-workflow)
+        echo This project has been initialized with agile workflow support and auto rule generation configured from [roo-auto-rules-agile-workflow](https://github.com/bmadcode/roo-auto-rules-agile-workflow)
         echo.
         echo For workflow documentation, see [Workflow Rules](docs/workflow-rules.md)
     ) > "%TARGET_DIR%\README.md"
 )
 
-REM Create .cursor directory if it doesn't exist
-if not exist "%TARGET_DIR%\.cursor\" (
-    mkdir "%TARGET_DIR%\.cursor"
+REM Create .roo directory if it doesn't exist
+if not exist "%TARGET_DIR%\.roo\" (
+    mkdir "%TARGET_DIR%\.roo"
 )
 
 REM Function to copy file if it doesn't exist
@@ -40,19 +40,19 @@ if not exist "%dest%" (
 )
 exit /b
 
-REM Copy all files from .cursor directory structure
-echo 📦 Copying .cursor directory files...
-for /r ".cursor" %%F in (*) do (
+REM Copy all files from .roo directory structure
+echo 📦 Copying .roo directory files...
+for /r ".roo" %%F in (*) do (
     set "rel_path=%%~pF"
-    set "rel_path=!rel_path:.cursor\=!"
+    set "rel_path=!rel_path:.roo\=!"
     
     REM Create target directory if it doesn't exist
-    if not exist "%TARGET_DIR%\.cursor\!rel_path!" (
-        mkdir "%TARGET_DIR%\.cursor\!rel_path!"
+    if not exist "%TARGET_DIR%\.roo\!rel_path!" (
+        mkdir "%TARGET_DIR%\.roo\!rel_path!"
     )
     
     REM Copy file if it doesn't exist
-    call :copy_if_not_exists "%%F" "%TARGET_DIR%\.cursor\!rel_path!%%~nxF"
+    call :copy_if_not_exists "%%F" "%TARGET_DIR%\.roo\!rel_path!%%~nxF"
 )
 
 REM Create docs directory if it doesn't exist
@@ -62,9 +62,9 @@ if not exist "%TARGET_DIR%\docs\" (
 
 REM Create workflow documentation
 (
-    echo # Cursor Workflow Rules
+    echo # Roo Workflow Rules
     echo.
-    echo This project has been updated to use the auto rule generator from [cursor-auto-rules-agile-workflow](https://github.com/bmadcode/cursor-auto-rules-agile-workflow)
+    echo This project has been updated to use the auto rule generator from [roo-auto-rules-agile-workflow](https://github.com/bmadcode/roo-auto-rules-agile-workflow)
     echo.
     echo ^> **Note**: This script can be safely re-run at any time to update the template rules to their latest versions^. It will not impact or overwrite any custom rules you've created^.
     echo.
@@ -87,12 +87,12 @@ REM Create workflow documentation
 
 REM Update .gitignore with xnotes and docs
 if exist "%TARGET_DIR%\.gitignore" (
-    findstr /L /C:".cursor/rules/_*.mdc" "%TARGET_DIR%\.gitignore" >nul
+    findstr /L /C:".roo/rules/_*.mdc" "%TARGET_DIR%\.gitignore" >nul
     if errorlevel 1 (
         (
             echo.
-            echo # Private individual user cursor rules
-            echo .cursor/rules/_*.mdc
+            echo # Private individual user roo rules
+            echo .roo/rules/_*.mdc
             echo.
             echo # Documentation and templates
             echo xnotes/
@@ -101,8 +101,8 @@ if exist "%TARGET_DIR%\.gitignore" (
     )
 ) else (
     (
-        echo # Private individual user cursor rules
-        echo .cursor/rules/_*.mdc
+        echo # Private individual user roo rules
+        echo .roo/rules/_*.mdc
         echo.
         echo # Documentation and templates
         echo xnotes/
@@ -117,46 +117,46 @@ if not exist "%TARGET_DIR%\xnotes\" (
 )
 xcopy "xnotes\*.*" "%TARGET_DIR%\xnotes\" /E /I /Y >nul
 
-REM Update .cursorignore
-if exist "%TARGET_DIR%\.cursorignore" (
-    findstr /L /C:"xnotes/" "%TARGET_DIR%\.cursorignore" >nul
+REM Update .rooignore
+if exist "%TARGET_DIR%\.rooignore" (
+    findstr /L /C:"xnotes/" "%TARGET_DIR%\.rooignore" >nul
     if errorlevel 1 (
         (
             echo.
             echo # Project notes and templates
             echo xnotes/
-        ) >> "%TARGET_DIR%\.cursorignore"
+        ) >> "%TARGET_DIR%\.rooignore"
     )
 ) else (
     (
         echo # Project notes and templates
         echo xnotes/
-    ) > "%TARGET_DIR%\.cursorignore"
+    ) > "%TARGET_DIR%\.rooignore"
 )
 
-REM Create or update .cursorindexingignore
-if exist "%TARGET_DIR%\.cursorindexingignore" (
-    findstr /L /C:".cursor/templates/" "%TARGET_DIR%\.cursorindexingignore" >nul
+REM Create or update .rooindexingignore
+if exist "%TARGET_DIR%\.rooindexingignore" (
+    findstr /L /C:".roo/templates/" "%TARGET_DIR%\.rooindexingignore" >nul
     if errorlevel 1 (
         (
             echo.
             echo # Templates - accessible but not indexed
-            echo .cursor/templates/
-        ) >> "%TARGET_DIR%\.cursorindexingignore"
+            echo .roo/templates/
+        ) >> "%TARGET_DIR%\.rooindexingignore"
     )
 ) else (
     (
         echo # Templates - accessible but not indexed
-        echo .cursor/templates/
-    ) > "%TARGET_DIR%\.cursorindexingignore"
+        echo .roo/templates/
+    ) > "%TARGET_DIR%\.rooindexingignore"
 )
 
 echo.
 echo ✨ Deployment Complete!
-echo 📁 Core rule generator: %TARGET_DIR%\.cursor\rules\core-rules\rule-generating-agent.mdc
-echo 📁 Sample sub-folders and rules: %TARGET_DIR%\.cursor\rules\{sub-folders}\
-echo 📁 Sample Agile Workflow Templates: %TARGET_DIR%\.cursor\templates\
+echo 📁 Core rule generator: %TARGET_DIR%\.roo\rules\core-rules\rule-generating-agent.mdc
+echo 📁 Sample sub-folders and rules: %TARGET_DIR%\.roo\rules\{sub-folders}\
+echo 📁 Sample Agile Workflow Templates: %TARGET_DIR%\.roo\templates\
 echo 📄 Workflow Documentation: %TARGET_DIR%\docs\workflow-rules.md
-echo 🔒 Updated .gitignore, .cursorignore, and .cursorindexingignore
+echo 🔒 Updated .gitignore, .rooignore, and .rooindexingignore
 
 endlocal

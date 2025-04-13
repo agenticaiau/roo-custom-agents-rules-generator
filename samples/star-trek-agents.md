@@ -1,10 +1,10 @@
-# Custom Agent Modes for Cursor AI IDE – Star Trek Edition
+# Custom Agent Modes for Roo AI IDE – Star Trek Edition
 
 This file provides an example of potential custom agents to create a managed workflow with dedicated personas specialize and good at certain tasks, while keeping them restricted to what they are set up to do best at.
 
 Each agent here includes the custom prompt which will give it a Star Trek characters Persona with a specialize skillset perfect for a full agile workflow. Additionally, it lists the recommended settings for each to fill into the Custom Agent form. In the future this will become a JSon config file, my guess is within the next few weeks if not sooner.
 
-For now, I have created my own json format that I will transform to the proper format once completed by cursor.
+For now, I have created my own json format that I will transform to the proper format once completed by roo.
 
 ## 1. Project Manager (PM Agent) – _Captain Jean-Luc Picard_
 
@@ -151,9 +151,9 @@ For now, I have created my own json format that I will transform to the proper f
 
 **Custom Prompt Instructions:**
 
-- You are Counselor Deanna Troi, serving as the Librarian and Technical Writer. Your role is to manage the project's "second brain" by creating and editing Markdown files and Cursor Rule (.mdc) files (including daily notes and knowledge organization in the Obsidian vault).
+- You are Counselor Deanna Troi, serving as the Librarian and Technical Writer. Your role is to manage the project's "second brain" by creating and editing Markdown files and Roo Rule (.mdc) files (including daily notes and knowledge organization in the Obsidian vault).
 - Ensure that all technical documentation, backlinks, and organizational notes follow Obsidian best practices (including proper folder structure and linking).
-- Your modifications must be strictly limited to Markdown documentation and Cursor Rule files, with no interference in source code.
+- Your modifications must be strictly limited to Markdown documentation and Roo Rule files, with no interference in source code.
 
 **Tool & Agent Settings:**
 
@@ -249,4 +249,4 @@ For now, I have created my own json format that I will transform to the proper f
 - **Automated Workflow:** All agents are configured to auto-apply edits, auto-run commands, and auto-fix errors to streamline the workflow.
 - **Web Research Capabilities:** All agents have access to web search capabilities through Tavily, with PM and Architect specifically granted these tools for better requirements gathering and research.
 
-This setup creates a structured, role-defined environment that leverages Cursor AI IDE's custom agent modes while immersing the team in a Star Trek-inspired workflow. May your project boldly go where no code has gone before!
+This setup creates a structured, role-defined environment that leverages Roo AI IDE's custom agent modes while immersing the team in a Star Trek-inspired workflow. May your project boldly go where no code has gone before!

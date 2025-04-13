@@ -6,7 +6,7 @@ alwaysApply: false
 # Agile Workflow and core memory procedure RULES that MUST be followed EXACTLY!
 
 1. When coming online, you will first check if a .ai/*.story.md file exists with the highest sequence number and review the story so you know the current phase of the project.
-5. Always use the `.cursor/templates/template-story.md` file as a template for the story. The story will be named <story>-<n>.story.md added to the .ai folder
+5. Always use the `.roo/templates/template-story.md` file as a template for the story. The story will be named <story>-<n>.story.md added to the .ai folder
    - Example: .ai/story-1.story.md, .ai/story-2.story.md
 6. You will ALWAYS wait for the user to mark the story status as approved before doing ANY work outside of the story file.
 7. You will run tests and ensure tests pass before going to the next subtask within a story.

@@ -1,14 +1,14 @@
-# Cursor Agile Workflow Documentation
+# Roo Agile Workflow Documentation
 
-This document provides comprehensive documentation for the Agile workflow system integrated with Cursor's AI capabilities. The workflow is designed to maintain project focus and memory and ensure consistent progress through a structured approach to development.
+This document provides comprehensive documentation for the Agile workflow system integrated with Roo's AI capabilities. The workflow is designed to maintain project focus and memory and ensure consistent progress through a structured approach to development.
 
 ## Overview
 
-The Agile-Cursor workflow combines traditional Agile methodologies with AI-assisted development to create a powerful, efficient development process. It can be utilized in two primary ways:
+The Agile-Roo workflow combines traditional Agile methodologies with AI-assisted development to create a powerful, efficient development process. It can be utilized in two primary ways:
 
 1. **Rule-Based Implementation** (Automatic)
 
-   - Uses `.cursor/rules/workflows/workflow-agile-manual` and `.cursor/templates`
+   - Uses `.roo/rules/workflows/workflow-agile-manual` and `.roo/templates`
    - Automatically applies standards to matching files
    - Provides consistent structure enforcement
 
@@ -148,15 +148,15 @@ graph LR
 
 ## Using the Workflow
 
-The best way post 0.47.x+ of cursor is to use the rules based approach, with either manual, agent selection or always on rules. I prefer manual selection type rule for the workflows, so that they will not be in a context if I do not need it (explanation to follow).
+The best way post 0.47.x+ of roo is to use the rules based approach, with either manual, agent selection or always on rules. I prefer manual selection type rule for the workflows, so that they will not be in a context if I do not need it (explanation to follow).
 
 If I am starting a brand new project (with our without an existing code template) I have a few options:
 
 - Use an external tool to generate the PRD (Such as ChatGPT Canvas or o3 mini Web UI or Google AI Studio)
-- Use the workflow and agent in cursor to generate the PRD
-  (This comes down to personal preference and consideration of token burn within cursor)
+- Use the workflow and agent in roo to generate the PRD
+  (This comes down to personal preference and consideration of token burn within roo)
 
-If I am doing this in cursor, I will start a new Agent chat with Claude 3.7 Thinking (or choose a different model if concerned about credit burn) and type something like:
+If I am doing this in roo, I will start a new Agent chat with Claude 3.7 Thinking (or choose a different model if concerned about credit burn) and type something like:
 
 `Lets follow the @workflow-agile-manual to create a PRD for a new project I want to create that will do XYZ, have the following features etc etc. Lets focus on just the MVP feature first will be to deliver X minimally, but lets also plan to have some epics for fast follows or future enhancements such as A B and C.`
 
@@ -166,7 +166,7 @@ Note: you can also modify the workflow-agile-manual to be Agent auto-selectable,
 
 The agent should generate a draft prd.md file in a .ai folder.
 
-I suggest at this point, you do not approve and jump right in - either in cursor with the agent, or an external tool - engage further with the agent to refine the document, have the agent ask you questions on holes in the document that it might want to know the answer to, ask the agent if it needs any clarifications that will allow for a very jr agent developer to understand and implement the stories, ask the agent if the sequencing of the stories make sense etc...
+I suggest at this point, you do not approve and jump right in - either in roo with the agent, or an external tool - engage further with the agent to refine the document, have the agent ask you questions on holes in the document that it might want to know the answer to, ask the agent if it needs any clarifications that will allow for a very jr agent developer to understand and implement the stories, ask the agent if the sequencing of the stories make sense etc...
 
 Once you feel its in a good spot - you can mark the file as status: approved.
 
@@ -219,9 +219,9 @@ Epics follow a similar progression:
 Future -> Current -> Complete
 ```
 
-## Integration with Cursor AI
+## Integration with Roo AI
 
-The workflow is designed to work seamlessly with Cursor's AI capabilities:
+The workflow is designed to work seamlessly with Roo's AI capabilities:
 
 1. **AI-Assisted Planning**
 
@@ -242,5 +242,5 @@ The workflow is designed to work seamlessly with Cursor's AI capabilities:
 
 ## Cost Savings
 
-- LLMs outside of Cursor, if you have them available, such as ChatGPT, Claude, Gemini, etc. are also great to generate the initial PRD and architecture, and really iterate on them.
-- Within Cursor, currently you can use DeepSeek R1 for example which seems to be free and also decent and udpating PRD and architecture - but I have found it to be a bit less reliable than using Claude to follow the format I want - but much cheaper, if trying to do it all in cursor planning.
+- LLMs outside of Roo, if you have them available, such as ChatGPT, Claude, Gemini, etc. are also great to generate the initial PRD and architecture, and really iterate on them.
+- Within Roo, currently you can use DeepSeek R1 for example which seems to be free and also decent and udpating PRD and architecture - but I have found it to be a bit less reliable than using Claude to follow the format I want - but much cheaper, if trying to do it all in roo planning.

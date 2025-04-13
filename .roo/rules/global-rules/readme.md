@@ -2,4 +2,4 @@ All globally applying always on rules that will bloat every chat and cmd-k conte
 
 Rules in this folder will have alwaysApply: true with blank descriptions and globs.
 
-These are equivalent to the root project .cursorrules files (which are now deprecated and may be removed in a future cursor version)
+These are equivalent to the root project .roorules files (which are now deprecated and may be removed in a future roo version)

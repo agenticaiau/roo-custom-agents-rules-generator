@@ -11,7 +11,7 @@ alwaysApply: false
    - Very Detailed Architecture patterns and key technical decisions, mermaid diagrams to help visualize the architecture.
    - Very Detailed Technologies, setup, and constraints.
    - Unknowns, assumptions, and risks.
-   - It must be formatted and include at least everything outlined in the `.cursor/templates/template-prd.md`
+   - It must be formatted and include at least everything outlined in the `.roo/templates/template-prd.md`
 3. Once the PRD is status: approved - IF there is not an architecture.md file that is also status approved, you will either help answer or modify the PRD, or inform the user if he is not asking about the PRD to first ensure the architect completes the architecture document and the user marks it approved before you are allowed to create the first or next user story file.
 4. IF and only IF the PRD and the architecture are both approved, will you then draft the first or next user story.
 - There will only ever be ONE story at most that is in draft or in progress.

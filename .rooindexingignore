@@ -1,0 +1,6 @@
+/xnotes
+.roo/templates/*.md
+/node_modules
+.roo/rules/*
+.roo/modes.json
+.roo/mcp.json
